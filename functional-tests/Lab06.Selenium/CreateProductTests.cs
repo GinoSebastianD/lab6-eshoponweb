@@ -6,40 +6,16 @@ using Xunit;
 
 namespace Lab06.Selenium;
 
-public sealed class CreateProductTests : IDisposable
+public sealed class CreateProductTests : AdminTest
 {
-    private readonly ChromeDriver browser;
     private readonly string product = $"Lab06-{Guid.NewGuid():N}"[..16];
     private const string Description = "Producto de prueba";
     private const string RangeError = "between 0.01 and 1000";
-    private IWebElement Dialog => browser.FindElements(By.CssSelector(".modal")).Single(m => m.Displayed);
-    private IReadOnlyCollection<IWebElement> Rows => browser.FindElements(By.CssSelector("tbody tr"));
-    private IWebElement Button(string text) => browser.FindElement(By.XPath($"//button[normalize-space()='{text}']"));
-
     public CreateProductTests()
     {
-        var options = new ChromeOptions { AcceptInsecureCertificates = true };
-        options.AddArguments("--headless=new", "--window-size=1440,1050", "--lang=en-US");
-        var driverDir = Environment.GetEnvironmentVariable("CHROMEDRIVER_DIR");
-        var service = driverDir is null ? ChromeDriverService.CreateDefaultService() : ChromeDriverService.CreateDefaultService(driverDir);
-        browser = new ChromeDriver(service, options);
-        try
-        {
-            const string origin = "https://localhost:5001";
-            browser.Navigate().GoToUrl(origin + "/Identity/Account/Login");
-            browser.FindElement(By.Id("Input_Email")).SendKeys("productmgr@microsoft.com");
-            // Public demo account seeded only for the local lab.
-            browser.FindElement(By.Id("Input_Password")).SendKeys("Pass@word1");
-            browser.FindElement(By.CssSelector("form[method=post] button[type=submit]")).Click();
-            Wait(() => !browser.Url.Contains("/Account/Login"), "sign in");
-            browser.Navigate().GoToUrl(origin + "/admin");
-            Wait(() => Rows.Count > 0, "load product catalog");
-            Button("Create New").Click();
-            Wait(() => browser.FindElements(By.CssSelector(".modal")).Any(m => m.Displayed), "open form");
-        }
-        catch { browser.Dispose(); throw; }
+        Button("Create New").Click();
+        Wait(() => !Closed(), "open form");
     }
-
     [Fact] public void CP01_PrecioHabitual() => Accepted("12.50", "CP01");
     [Fact] public void CP02_PrecioMinimo() => Accepted("0.01", "CP02");
     [Fact] public void CP03_PrecioMaximo() => Accepted("1000", "CP03");
@@ -72,7 +48,6 @@ public sealed class CreateProductTests : IDisposable
         inputs.Last().SendKeys(Keys.Tab);
     }
 
-    private bool Closed() => !browser.FindElements(By.CssSelector(".modal")).Any(m => m.Displayed);
     private void Submit() => Dialog.FindElement(By.CssSelector("button[type=submit]")).Click();
 
     private void Accepted(string price, string id)
@@ -107,24 +82,4 @@ public sealed class CreateProductTests : IDisposable
         if (id == "CP04") Capture("03-precio-invalido");
     }
 
-    private void Capture(string name)
-    {
-        var dir = Environment.GetEnvironmentVariable("LAB06_CAPTURAS");
-        if (dir is null) return;
-        Directory.CreateDirectory(dir);
-        browser.GetScreenshot().SaveAsFile(Path.Combine(dir, name + ".png"));
-    }
-
-    private static void Wait(Func<bool> ready, string action)
-    {
-        var timer = Stopwatch.StartNew();
-        while (timer.Elapsed < TimeSpan.FromSeconds(25))
-        {
-            try { if (ready()) return; } catch (StaleElementReferenceException) { }
-            Thread.Sleep(120);
-        }
-        throw new TimeoutException(action);
-    }
-
-    public void Dispose() => browser.Dispose();
 }

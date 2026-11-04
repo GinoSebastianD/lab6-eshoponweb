@@ -13,7 +13,7 @@ $env:Logging__LogLevel__Default = 'Warning'
 $services = @()
 $scratch = [IO.Directory]::CreateTempSubdirectory('eshop-lab06-').FullName
 try {
-    foreach ($project in @('src/PublicApi/PublicApi.csproj','src/Web/Web.csproj','tests/Lab06.Selenium/Lab06.Selenium.csproj')) {
+    foreach ($project in @('src/PublicApi/PublicApi.csproj','src/Web/Web.csproj','functional-tests/Lab06.Selenium/Lab06.Selenium.csproj')) {
         & $exe build "$root/$project" --verbosity quiet
         if ($LASTEXITCODE) { throw "Build failed: $project" }
     }
