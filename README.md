@@ -1,4 +1,10 @@
-# Laboratorio 05 — Pruebas unitarias y dobles de prueba
+# Laboratorio 06 · Pruebas funcionales de eShopOnWeb
+
+Cinco conjuntos de Selenium y xUnit evalúan la creación, edición y eliminación de productos, los filtros del catálogo y el carrito. El código de automatización tiene su propio proyecto en [functional-tests/Lab06.Selenium](functional-tests/Lab06.Selenium/).
+
+[Informe y resultados](docs/lab06-funcionales/) · [Proyecto Pruebas](https://github.com/users/GinoSebastianD/projects/2) · [Issues de los integrantes](https://github.com/GinoSebastianD/lab6-eshoponweb/issues?q=is%3Aissue+Integrante)
+
+## Laboratorio 05 — Pruebas unitarias y dobles de prueba
 
 Implementación del laboratorio sobre eShopOnWeb: **42 pruebas nuevas aprobadas**, 20 pruebas originales del carrito aprobadas y corrección de un desbordamiento mediante TDD. Se conserva el proyecto original y su licencia MIT.
 
