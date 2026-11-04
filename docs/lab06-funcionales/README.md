@@ -10,13 +10,13 @@ El monorepo mantiene la aplicación en `src/`, las pruebas unitarias en sus proy
 
 | Integrante | Funcionalidad | Implementación | Issue |
 |---|---|---|---|
-| Integrante 1 | Crear productos | [CreateProductTests](../../functional-tests/Lab06.Selenium/CreateProductTests.cs) | [#7](https://github.com/GinoSebastianD/lab6-eshoponweb/issues/7) |
-| Integrante 2 | Editar productos | [EditProductTests](../../functional-tests/Lab06.Selenium/EditProductTests.cs) | [#8](https://github.com/GinoSebastianD/lab6-eshoponweb/issues/8) |
-| Integrante 3 | Eliminar productos | [DeleteProductTests](../../functional-tests/Lab06.Selenium/DeleteProductTests.cs) | [#9](https://github.com/GinoSebastianD/lab6-eshoponweb/issues/9) |
-| Integrante 4 | Filtrar el catálogo | [CatalogFilterTests](../../functional-tests/Lab06.Selenium/CatalogFilterTests.cs) | [#10](https://github.com/GinoSebastianD/lab6-eshoponweb/issues/10) |
-| Integrante 5 | Actualizar el carrito | [BasketQuantityTests](../../functional-tests/Lab06.Selenium/BasketQuantityTests.cs) | [#11](https://github.com/GinoSebastianD/lab6-eshoponweb/issues/11) |
+| Fabián | Crear productos | [CreateProductTests](../../functional-tests/Lab06.Selenium/CreateProductTests.cs) | [#7](https://github.com/GinoSebastianD/lab6-eshoponweb/issues/7) |
+| Sebastian | Editar productos | [EditProductTests](../../functional-tests/Lab06.Selenium/EditProductTests.cs) | [#8](https://github.com/GinoSebastianD/lab6-eshoponweb/issues/8) |
+| Gonzalo | Eliminar productos | [DeleteProductTests](../../functional-tests/Lab06.Selenium/DeleteProductTests.cs) | [#9](https://github.com/GinoSebastianD/lab6-eshoponweb/issues/9) |
+| Andy | Filtrar el catálogo | [CatalogFilterTests](../../functional-tests/Lab06.Selenium/CatalogFilterTests.cs) | [#10](https://github.com/GinoSebastianD/lab6-eshoponweb/issues/10) |
+| Gino | Actualizar el carrito | [BasketQuantityTests](../../functional-tests/Lab06.Selenium/BasketQuantityTests.cs) | [#11](https://github.com/GinoSebastianD/lab6-eshoponweb/issues/11) |
 
-Commits por integrante: [1 · creación](https://github.com/GinoSebastianD/lab6-eshoponweb/commit/a3b22bd), [2 · edición](https://github.com/GinoSebastianD/lab6-eshoponweb/commit/802988b), [3 · eliminación](https://github.com/GinoSebastianD/lab6-eshoponweb/commit/0c6f6fc), [4 · filtros](https://github.com/GinoSebastianD/lab6-eshoponweb/commit/7b164d2) y [5 · carrito](https://github.com/GinoSebastianD/lab6-eshoponweb/commit/f1dfa48).
+Commits por integrante: [Fabián · creación](https://github.com/GinoSebastianD/lab6-eshoponweb/commit/a3b22bd), [Sebastian · edición](https://github.com/GinoSebastianD/lab6-eshoponweb/commit/802988b), [Gonzalo · eliminación](https://github.com/GinoSebastianD/lab6-eshoponweb/commit/0c6f6fc), [Andy · filtros](https://github.com/GinoSebastianD/lab6-eshoponweb/commit/7b164d2) y [Gino · carrito](https://github.com/GinoSebastianD/lab6-eshoponweb/commit/f1dfa48).
 
 ## Casos verificados
 
