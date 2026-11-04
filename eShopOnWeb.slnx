@@ -17,9 +17,11 @@
     <Project Path="src/PublicApi/PublicApi.csproj" />
     <Project Path="src/Web/Web.csproj" />
   </Folder>
+  <Folder Name="/functional-tests/">
+    <Project Path="functional-tests/Lab06.Selenium/Lab06.Selenium.csproj" />
+  </Folder>
   <Folder Name="/tests/">
     <Project Path="tests/Lab05.Tests/Lab05.Tests.csproj" />
-    <Project Path="functional-tests/Lab06.Selenium/Lab06.Selenium.csproj" />
     <File Path="CodeCoverage.runsettings" />
     <Project Path="tests/FunctionalTests/FunctionalTests.csproj" />
     <Project Path="tests/IntegrationTests/IntegrationTests.csproj" />
